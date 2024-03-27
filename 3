@@ -1,0 +1,15 @@
+with open("scientist.txt", "r", encoding="utf-8") as f:
+    li = [i.split('#') for i in f]
+li = li[1:]
+print(li)
+a = input()
+while a != 'эксперимент':
+    data = '-'.join([a.split('.')[-1], a.split('.')[-2], a.split('.')[-3]])
+    print(data)
+    for i in li:
+        if i[2] == data:
+            print('Ученый', i[0], 'создал препарат:', i[1], '-', i[2])
+        break
+    else:
+        print('В этот день ученые отдыхали')
+    a = input()
