@@ -1,0 +1,13 @@
+rez = []
+ar = []
+with open("scientist.txt", "r", encoding="utf-8") as f:
+    li = [i.split('#') for i in f]
+li = li[1:]
+print(li)
+for i in li:
+    rez.append([i[2], i])
+rez = sorted(rez)
+for i in rez:
+    ar.append(i[1])
+for i in range(5):
+    print(ar[i][0] + ': ' + ar[i][1])
